@@ -1,9 +1,10 @@
-from datetime import date
 from django.shortcuts import render
+
+from solveit import helpers
 
 
 def home(request):
     context = {
-        'today': date.today(),
+        'today': helpers.today(),
     }
     return render(request, 'index.html', context)
