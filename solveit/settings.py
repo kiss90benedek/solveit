@@ -54,7 +54,7 @@ ROOT_URLCONF = 'solveit.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['solveit/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
