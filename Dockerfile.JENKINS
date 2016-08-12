@@ -1,0 +1,16 @@
+FROM jenkins
+
+USER root
+
+RUN apt-get dist-upgrade
+RUN apt-get -qq update
+RUN apt-get -qq install software-properties-common # get Python 3.4
+
+RUN apt-get -qq install python3-pip
+
+# TODO update fails although it works on an Ubuntu base image
+# RUN add-apt-repository ppa:fkrull/deadsnakes
+# RUN apt-get update
+# RUN apt-get install python3.5
+
+# USER jenkins # TODO fails when trying to run container
