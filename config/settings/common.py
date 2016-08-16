@@ -81,13 +81,18 @@ TEMPLATES = [
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# DATABASE CONFIGURATION
+# DATABASE
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR.path('db.sqlite3')),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'solveitdb',
+        'USER': 'postgres',
+        'PASSWORD': 'DSfMgRJbon5K',
+        'HOST': '',
+        'PORT': '5432',
+        'ATOMIC_REQUESTS': True,
     }
 }
 
