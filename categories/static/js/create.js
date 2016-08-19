@@ -34,12 +34,12 @@ var createCategory = function() {
     }
 
     function submitSuccessHandler(response) {
-        $serverSuccess.text('Category created successfully');
+        $serverSuccess.text(gettext('Category created successfully'));
         $serverSuccess.show();
     }
 
     function submitErrorHandler(response) {
-        $serverFailure.text('Something went wrong. Maybe this category already exists');
+        $serverFailure.text(gettext('Something went wrong. Maybe the category exists already?'));
         $serverFailure.show();
     }
 
