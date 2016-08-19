@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 from __future__ import absolute_import, unicode_literals
 
 import environ
+from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = environ.Path(__file__) - 3  # (solveit/config/settings/common.py - 3 = solveit/)
 APPS_DIR = BASE_DIR.path('solveit')
@@ -45,6 +46,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # should come after SessionMiddleware, and before CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -119,7 +121,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # INTERNATIONALIZATION
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    ('en', _('English')),
+    ('hu', _('Hungarian')),
+]
+LANGUAGE_CODE = 'hu-hu'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
